@@ -116,8 +116,10 @@
           var data = res.list[j].arr;
           var liTmpl = "";
           for (var i = 0, len = data.link.length; i < len; i++) {
-            var minSrc = 'https://raw.githubusercontent.com/lovexinforever/blog_back_up/master/min_photos/' + data.link[i];
-            var src = 'https://raw.githubusercontent.com/lovexinforever/blog_back_up/master/photos/' + data.link[i];
+            // var minSrc = 'https://raw.githubusercontent.com/lovexinforever/blog_back_up/master/min_photos/' + data.link[i];
+            // var src = 'https://raw.githubusercontent.com/lovexinforever/blog_back_up/master/photos/' + data.link[i];
+            var minSrc = 'http://easydecode.coding.me/photos/min_photos/' + data.link[i];
+            var src = 'http://easydecode.coding.me/photos/photos/' + data.link[i];
             var type = data.type[i];
             var target = src + (type === 'video' ? '.mp4' : '.jpg');
             src += '';
