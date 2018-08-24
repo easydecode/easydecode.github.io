@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://easydecode.github.io/photos/data.json</loc>
+    
+    <lastmod>2018-08-24T14:55:04.070Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://easydecode.github.io/photos/index.html</loc>
     
-    <lastmod>2018-08-24T14:42:28.468Z</lastmod>
+    <lastmod>2018-08-24T14:50:22.992Z</lastmod>
     
   </url>
   

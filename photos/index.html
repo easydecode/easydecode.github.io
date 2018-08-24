@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="Photos    图片正在加载中…    (function() {    var loadScript = function(path) {      var $script = document.createElement(‘script’)      document.getElementsByTagName(‘body’)[0].appendChild($script)">
+<meta name="description" content="Photos    图片正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChild($scr">
 <meta property="og:type" content="website">
 <meta property="og:title" content="我的相册">
 <meta property="og:url" content="https://easydecode.github.io/photos/index.html">
 <meta property="og:site_name" content="轻松解码">
-<meta property="og:description" content="Photos    图片正在加载中…    (function() {    var loadScript = function(path) {      var $script = document.createElement(‘script’)      document.getElementsByTagName(‘body’)[0].appendChild($script)">
+<meta property="og:description" content="Photos    图片正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChild($scr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-24T14:42:28.468Z">
+<meta property="og:updated_time" content="2018-08-24T14:50:22.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的相册">
-<meta name="twitter:description" content="Photos    图片正在加载中…    (function() {    var loadScript = function(path) {      var $script = document.createElement(‘script’)      document.getElementsByTagName(‘body’)[0].appendChild($script)">
+<meta name="twitter:description" content="Photos    图片正在加载中…     (function() {     var loadScript = function(path) {       var $script = document.createElement(&apos;script&apos;)       document.getElementsByTagName(&apos;body&apos;)[0].appendChild($scr">
 
 
 
@@ -361,8 +361,19 @@
 <p><link rel="stylesheet" href="./default-skin/default-skin.css"> </p>
 <div class="photos-btn-wrap"><br>    <a class="photos-btn active" href="javascript:void(0)" target="_blank" rel="noopener">Photos</a><br></div><br><div class="instagram itemscope"><br>    <a href="https://easydecode.coding.me" target="_blank" class="open-ins">图片正在加载中…</a><br></div>
 
-<p><script><br>  (function() {<br>    var loadScript = function(path) {<br>      var $script = document.createElement(‘script’)<br>      document.getElementsByTagName(‘body’)[0].appendChild($script)<br>      $script.setAttribute(‘src’, path)<br>    }<br>    setTimeout(function() {<br>        loadScript(‘./ins.js’)<br>    }, 0)<br>  })()</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></script></p>
+<script>
+  (function() {
+    var loadScript = function(path) {
+      var $script = document.createElement('script')
+      document.getElementsByTagName('body')[0].appendChild($script)
+      $script.setAttribute('src', path)
+    }
+    setTimeout(function() {
+        loadScript('./ins.js')
+    }, 0)
+  })()
+</script>
+
         
       </div>
       
