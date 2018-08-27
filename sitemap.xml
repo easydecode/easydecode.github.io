@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://easydecode.coding.me/photos/data.json</loc>
+    
+    <lastmod>2018-08-27T07:05:51.155Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://easydecode.coding.me/2017/04/11/48aba412.html</loc>
+    
+    <lastmod>2018-08-27T07:03:15.174Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://easydecode.coding.me/2017/05/02/2dad7fc2.html</loc>
+    
+    <lastmod>2018-08-27T07:02:05.606Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://easydecode.coding.me/photos/index.html</loc>
+    
+    <lastmod>2018-08-27T04:01:51.275Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://easydecode.coding.me/2018/06/01/4aabff58.html</loc>
     
     <lastmod>2018-08-27T03:29:17.300Z</lastmod>
@@ -47,27 +75,6 @@
     <loc>https://easydecode.coding.me/2018/01/22/6bd305d7.html</loc>
     
     <lastmod>2018-08-27T03:09:48.079Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://easydecode.coding.me/photos/data.json</loc>
-    
-    <lastmod>2018-08-27T02:43:48.786Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://easydecode.coding.me/photos/index.html</loc>
-    
-    <lastmod>2018-08-27T01:50:35.479Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://easydecode.coding.me/2017/05/02/2dad7fc2.html</loc>
-    
-    <lastmod>2018-08-25T00:12:37.949Z</lastmod>
     
   </url>
   
@@ -149,13 +156,6 @@
   </url>
   
   <url>
-    <loc>https://easydecode.coding.me/2017/04/11/48aba412.html</loc>
-    
-    <lastmod>2018-08-25T00:12:37.939Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://easydecode.coding.me/2017/04/25/65dc7f9b.html</loc>
     
     <lastmod>2018-08-25T00:12:37.938Z</lastmod>
@@ -205,21 +205,14 @@
   </url>
   
   <url>
-    <loc>https://easydecode.coding.me/2017/06/20/68c25507.html</loc>
-    
-    <lastmod>2018-08-25T00:12:37.934Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://easydecode.coding.me/2017/04/13/98556eab.html</loc>
+    <loc>https://easydecode.coding.me/2017/04/24/91b29f60.html</loc>
     
     <lastmod>2018-08-25T00:12:37.933Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://easydecode.coding.me/2017/04/24/91b29f60.html</loc>
+    <loc>https://easydecode.coding.me/2017/04/13/98556eab.html</loc>
     
     <lastmod>2018-08-25T00:12:37.933Z</lastmod>
     
