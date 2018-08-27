@@ -16,8 +16,8 @@
         <category>Java</category>
       </categories>
       <tags>
-        <tag>java</tag>
-        <tag>spring</tag>
+        <tag>Java</tag>
+        <tag>Spring</tag>
       </tags>
   </entry>
   <entry>
@@ -25,8 +25,11 @@
     <url>%2F2018%2F01%2F22%2F6bd305d7.html</url>
     <content type="text"><![CDATA[Union因为要进行重复值扫描，所以效率低。如果合并没有刻意要删除重复行，那么就使用Union All 两个要联合的SQL语句 字段个数必须一样，而且字段类型要“相容”（一致）； 如果我们需要将两个select语句的结果作为一个整体显示出来，我们就需要用到union或者union all关键字。union(或称为联合)的作用是将多个结果合并在一起显示出来。 union和union all的区别是,union会自动压缩多个结果集合中的重复结果，而union all则将所有的结果全部显示出来，不管是不是重复。 假设我们有一个表Student，包括以下字段与数据： mysql123456789101112131415161718192021drop table student; create table student ( id int primary key, name nvarchar2(50) not null, score number not null ); insert into student values(1,'Aaron',78); insert into student values(2,'Bill',76); insert into student values(3,'Cindy',89); insert into student values(4,'Damon',90); insert into student values(5,'Ella',73); insert into student values(6,'Frado',61); insert into student values(7,'Gill',99); insert into student values(8,'Hellen',56); insert into student values(9,'Ivan',93); insert into student values(10,'Jay',90); commit; 首先，我们来看一下UNION的例子： mysql123456789101112131415161718SQL&gt; select * 2 from student 3 where id&amp;lt;4 4 union 5 select * 6 from student 7 where id&amp;gt;2 and id&amp;lt;6 8 ; ID NAME SCORE ---------- ------------------------------ ---------- 1 Aaron 78 2 Bill 76 3 Cindy 89 4 Damon 90 5 Ella 73 SQL&gt; 如果换成Union All连接两个结果集，则结果如下： mysql12345678910111213141516171819SQL&gt; select * 2 from student 3 where id&amp;lt;4 4 union all 5 select * 6 from student 7 where id&amp;gt;2 and id&amp;lt;6 8 ; ID NAME SCORE ---------- ------------------------------ ---------- 1 Aaron 78 2 Bill 76 3 Cindy 89 3 Cindy 89 4 Damon 90 5 Ella 73 6 rows selected. 可以看到，Union和Union All的区别之一在于对重复结果的处理。 接下来，我们交换一个两个SELECT语句的顺序，看看结果是怎样的。 mysql123456789101112131415161718192021222324252627282930313233343536SQL&gt; select * 2 from student 3 where id&gt;2 and id&lt;6 4 union 5 select * 6 from student 7 where id&gt;4 8 ; ID NAME SCORE ---------- ------------------------------ ---------- 1 Aaron 78 2 Bill 76 3 Cindy 89 4 Damon 90 5 Ella 73 SQL&gt; select * 2 from student 3 where id&gt;2 and id&lt;6 4 union all 5 select * 6 from student 7 where id&gt;4 8 ; ID NAME SCORE ---------- ------------------------------ ---------- 3 Cindy 89 4 Damon 90 5 Ella 73 1 Aaron 78 2 Bill 76 3 Cindy 89 6 rows selected. 可以看到，对于UNION来说，交换两个SELECT语句的顺序后结果仍然是一样的，这是因为UNION会自动排序。而UNION ALL在交换了SELECT语句的顺序后结果则不相同，因为UNION ALL不会对结果自动进行排序。 那么这个自动排序的规则是什么呢？我们交换一下SELECT后面选择字段的顺序（前面使用SELECT * 相当于SELECT ID,NAME,SCORE），看看结果如何： mysql12345678910111213141516SQL&gt; select score,id,name 2 from student 3 where id&lt;4 4 union 5 select score,id,name 6 from student 7 where id&gt;2 and id&lt;6 8 ; SCORE ID NAME ---------- ---------- ------------------------------ 73 5 Ella 76 2 Bill 78 1 Aaron 89 3 Cindy 90 4 Damon 可以看到，此时是按照字段SCORE来对结果进行排序的（前面SELECT * 的时候是按照ID进行排序的）。 那么有人会问，如果我想自行控制排序，能不能使用ORDER BY呢？当然可以。不过在写法上有需要注意的地方： mysql12345678910111213141516select score,id,name from student where id &gt; 2 and id &lt; 7 union select score,id,name from student where id &lt; 4 union select score,id,name from student where id &gt; 8 order by id desc order by子句必须写在最后一个结果集里，并且其排序规则将改变操作后的排序结果。对于Union、Union All、Intersect、Minus都有效。 其他的集合操作符，如Intersect和Minus的操作和Union基本一致，这里一起总结一下： Union，对两个结果集进行并集操作，不包括重复行，同时进行默认规则的排序； Union All，对两个结果集进行并集操作，包括重复行，不进行排序； Intersect，对两个结果集进行交集操作，不包括重复行，同时进行默认规则的排序； Minus，对两个结果集进行差操作，不包括重复行，同时进行默认规则的排序。 可以在最后一个结果集中指定Order by子句改变排序方式。]]></content>
       <categories>
-        <category>数据库</category>
+        <category>DataBase</category>
       </categories>
+      <tags>
+        <tag>DataBase</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Java 8 Streams API：对Stream分组和分区]]></title>
@@ -107,7 +110,7 @@
         <category>Java</category>
       </categories>
       <tags>
-        <tag>java</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -118,7 +121,7 @@
         <category>Java</category>
       </categories>
       <tags>
-        <tag>java</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -294,7 +297,7 @@
         <category>Java</category>
       </categories>
       <tags>
-        <tag>java</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>

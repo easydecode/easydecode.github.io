@@ -85,18 +85,18 @@
 
 
 
-<meta name="description" content="这篇文章展示了如何使用 Streams API 中的 Collector 及 groupingBy 和 partitioningBy 来对流中的元素进行分组和分区。">
+<meta name="description" content="这篇文章展示了如何使用 Streams API 中的 Collector 及 groupingBy 和 partitioningBy 来对流中的元素进行分组和分区。 思考一下 Employee 对象流，每个对象对应一个名字、城市和销售数量，如下表所示：">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 8 Streams API：对Stream分组和分区">
 <meta property="og:url" content="https://easydecode.coding.me/2017/12/13/8d4c56cb.html">
 <meta property="og:site_name" content="轻松解码">
-<meta property="og:description" content="这篇文章展示了如何使用 Streams API 中的 Collector 及 groupingBy 和 partitioningBy 来对流中的元素进行分组和分区。">
+<meta property="og:description" content="这篇文章展示了如何使用 Streams API 中的 Collector 及 groupingBy 和 partitioningBy 来对流中的元素进行分组和分区。 思考一下 Employee 对象流，每个对象对应一个名字、城市和销售数量，如下表所示：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-27T00:21:50.710Z">
+<meta property="og:updated_time" content="2018-08-27T03:10:53.957Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 8 Streams API：对Stream分组和分区">
-<meta name="twitter:description" content="这篇文章展示了如何使用 Streams API 中的 Collector 及 groupingBy 和 partitioningBy 来对流中的元素进行分组和分区。">
+<meta name="twitter:description" content="这篇文章展示了如何使用 Streams API 中的 Collector 及 groupingBy 和 partitioningBy 来对流中的元素进行分组和分区。 思考一下 Employee 对象流，每个对象对应一个名字、城市和销售数量，如下表所示：">
 
 
 
@@ -350,7 +350,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-27T08:21:50+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-27T11:10:53+08:00">
                 2018-08-27
               </time>
             
@@ -444,10 +444,6 @@
           
 
           
-              <div class="post-description">
-                  这篇文章展示了如何使用 Streams API 中的 Collector 及 groupingBy 和 partitioningBy 来对流中的元素进行分组和分区。
-              </div>
-          
 
         </div>
       </header>
@@ -464,6 +460,7 @@
       
         <p>这篇文章展示了如何使用 Streams API 中的 Collector 及 groupingBy 和 partitioningBy 来对流中的元素进行分组和分区。</p>
 <p>思考一下 Employee 对象流，每个对象对应一个名字、城市和销售数量，如下表所示：</p>
+<a id="more"></a>
 <pre><code>+----------+------------+-----------------+
 | Name     | City       | Number of Sales |
 +----------+------------+-----------------+
@@ -472,8 +469,7 @@
 | Charles  | New York   | 160             |
 | Dorothy  | Hong Kong  | 190             |
 +----------+------------+-----------------+
-</code></pre><a id="more"></a>
-<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>首先，我们利用（lambda表达式出现之前的）命令式风格Java 程序对流中的雇员按城市进行分组：</p>
+</code></pre><h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>首先，我们利用（lambda表达式出现之前的）命令式风格Java 程序对流中的雇员按城市进行分组：</p>
 <figure class="highlight java"><figcaption><span>java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, List&lt;Employee&gt;&gt; result = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (Employee e : employees) &#123;</span><br><span class="line">  String city = e.getCity();</span><br><span class="line">  List&lt;Employee&gt; empsInCity = result.get(city);</span><br><span class="line">  <span class="keyword">if</span> (empsInCity == <span class="keyword">null</span>) &#123;</span><br><span class="line">    empsInCity = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    result.put(city, empsInCity);</span><br><span class="line">  &#125;</span><br><span class="line">  empsInCity.add(e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>你可能很熟悉写这样的代码，你也看到了，一个如此简单的任务就需要这么多代码！</p>
 <p>而在 Java 8 中，你可以使用 groupingBy 收集器，一条语句就能完成相同的功能，像这样：</p>
@@ -671,7 +667,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -743,7 +739,7 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://reuixiy.github.io" title="Title" target="_blank" rel="external nofollow">Title</a>
+                    <a href="https://reuixiy.github.io" title="一个大佬的博客" target="_blank" rel="external nofollow">一个大佬的博客</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">

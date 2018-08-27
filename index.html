@@ -538,7 +538,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-27T08:36:41+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-27T11:12:53+08:00">
                 2018-08-27
               </time>
             
@@ -647,10 +647,17 @@
 
       
         
-          ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文。ContextLoaderListener所加载的context被spring通过servletContext.setAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE, this.context)存放到ServletContext的attribute中。该上下文可通过WebApplicationContextUtils.getRequiredWebApplicationContext(servletContext)或WebApplicationContextUtils.getWebApplicationContext(servletContext)方法来获取。
+          <h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><ul>
+<li><p>ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文</p>
+</li>
+<li><p>ContextLoaderListener所加载的context被spring通过<br><code>servletContext.setAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE, this.context)</code>存放到ServletContext的attribute中。<br>该上下文可通过WebApplicationContextUtils.getRequiredWebApplicationContext(servletContext)或WebApplicationContextUtils.getWebApplicationContext(servletContext)方法来获取。</p>
+</li>
+<li><p>DispatcherServlet加载context完成后，如果publishContext属性的值设置为true的话(缺省为true) 会将context存放在ServletContext的key为org.springframework.web.servlet.FrameworkServlet.CONTEXT. + (servletName)的attribute中。</p>
+</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/11/f7940b2b.html">
+            <a class="btn" href="/2018/03/11/f7940b2b.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -748,8 +755,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-25T08:12:37+08:00">
-                2018-08-25
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-27T11:09:48+08:00">
+                2018-08-27
               </time>
             
           </span>
@@ -767,8 +774,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
+                  <a href="/categories/DataBase/" itemprop="url" rel="index">
+                    <span itemprop="name">DataBase</span>
                   </a>
                 </span>
 
@@ -961,7 +968,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-27T08:21:50+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-27T11:10:53+08:00">
                 2018-08-27
               </time>
             
@@ -1070,10 +1077,11 @@
 
       
         
-          这篇文章展示了如何使用 Streams API 中的 Collector 及 groupingBy 和 partitioningBy 来对流中的元素进行分组和分区。
+          <p>这篇文章展示了如何使用 Streams API 中的 Collector 及 groupingBy 和 partitioningBy 来对流中的元素进行分组和分区。</p>
+<p>思考一下 Employee 对象流，每个对象对应一个名字、城市和销售数量，如下表所示：</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/13/8d4c56cb.html">
+            <a class="btn" href="/2017/12/13/8d4c56cb.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2249,7 +2257,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-27T08:22:38+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-27T11:11:18+08:00">
                 2018-08-27
               </time>
             
@@ -2358,10 +2366,10 @@
 
       
         
-          人非圣贤，孰能无过。都说Java语言是一门简单的编程语言，基于C++演化而来，剔除了很多C++中的复杂特性，但这并不能保证Java程序员不会犯错。那么对于广大的Java程序员来说，它们最常犯的10个错误是什么呢？本文通过总结出Java程序员最常犯的10大错误，可以有效地帮组Java后来者少走弯路，少加班，并写出更健壮的应用程序。
+          <p>人非圣贤，孰能无过。都说Java语言是一门简单的编程语言，基于C++演化而来，剔除了很多C++中的复杂特性，但这并不能保证Java程序员不会犯错。那么对于广大的Java程序员来说，它们最常犯的10个错误是什么呢？本文通过总结出Java程序员最常犯的10大错误，可以有效地帮组Java后来者少走弯路，少加班，并写出更健壮的应用程序。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/03/f3cb340d.html">
+            <a class="btn" href="/2017/07/03/f3cb340d.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2473,7 +2481,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2545,7 +2553,7 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://reuixiy.github.io" title="Title" target="_blank" rel="external nofollow">Title</a>
+                    <a href="https://reuixiy.github.io" title="一个大佬的博客" target="_blank" rel="external nofollow">一个大佬的博客</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
