@@ -1,12 +1,15 @@
 User-agent: *
 Allow: /
+
 Disallow: /archives/
 Disallow: /tags/
 Disallow: /categories/
-Disallow: /vendors/
+Disallow: /page/
 Disallow: /js/
 Disallow: /css/
+Disallow: /lib/
 Disallow: /fonts/
+Disallow: /images/
 Disallow: /photos/
 Disallow: /vendors/
 Disallow: /fancybox/
