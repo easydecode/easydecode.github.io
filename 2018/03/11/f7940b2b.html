@@ -85,18 +85,18 @@
 
 
 
-<meta name="description" content="区别 ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文  ContextLoaderListener所加载的context被spring通过servletContext.setAttribute(WebApplicationCon">
+<meta name="description" content="ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文。ContextLoaderListener所加载的context被spring通过servletContext.setAttribute(WebApplicationContext">
 <meta name="keywords" content="java,spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring 中ContextLoaderListener和DispatcherServlet所加载的context的关系">
 <meta property="og:url" content="https://easydecode.coding.me/2018/03/11/f7940b2b.html">
 <meta property="og:site_name" content="轻松解码">
-<meta property="og:description" content="区别 ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文  ContextLoaderListener所加载的context被spring通过servletContext.setAttribute(WebApplicationCon">
+<meta property="og:description" content="ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文。ContextLoaderListener所加载的context被spring通过servletContext.setAttribute(WebApplicationContext">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-25T00:12:37.940Z">
+<meta property="og:updated_time" content="2018-08-27T00:36:41.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring 中ContextLoaderListener和DispatcherServlet所加载的context的关系">
-<meta name="twitter:description" content="区别 ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文  ContextLoaderListener所加载的context被spring通过servletContext.setAttribute(WebApplicationCon">
+<meta name="twitter:description" content="ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文。ContextLoaderListener所加载的context被spring通过servletContext.setAttribute(WebApplicationContext">
 
 
 
@@ -350,8 +350,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-25T08:12:37+08:00">
-                2018-08-25
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-27T08:36:41+08:00">
+                2018-08-27
               </time>
             
           </span>
@@ -443,6 +443,10 @@
             </div>
           
 
+          
+              <div class="post-description">
+                  ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文。ContextLoaderListener所加载的context被spring通过servletContext.setAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE, this.context)存放到ServletContext的attribute中。该上下文可通过WebApplicationContextUtils.getRequiredWebApplicationContext(servletContext)或WebApplicationContextUtils.getWebApplicationContext(servletContext)方法来获取。
+              </div>
           
 
         </div>
