@@ -1,5 +1,5 @@
 #post-instagram{
-	padding: 30px;
+	padding: 0px;
 }
 figure {
     margin: 0;
@@ -38,7 +38,7 @@ figure {
 	padding-bottom: 25%;
 	position: relative;
 	display: inline-block;
-	text-align: center;
+	text-align: left;
 	background: #ededed;
 	outline: 1px solid #ddd;
 }
@@ -61,7 +61,7 @@ figure {
 	list-style: none;
 	display: inline-block;
 	box-sizing: border-box;
-	padding: 0 5px;
+	padding: 0;
 	margin-bottom: -10px;
 	height: 0;
 	width: 25%;
@@ -150,4 +150,10 @@ figure {
 		width: 90%;
 		height: 90%;
 	}
+}
+ul {
+	-webkit-padding-start: 0px;
+}
+.post-meta {
+     margin-bottom: 0px; 
 }
