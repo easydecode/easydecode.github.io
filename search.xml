@@ -23,7 +23,7 @@
   <entry>
     <title><![CDATA[Union和Union All的区别]]></title>
     <url>%2F2018%2F01%2F22%2F6bd305d7.html</url>
-    <content type="text"><![CDATA[Union因为要进行重复值扫描，所以效率低。如果合并没有刻意要删除重复行，那么就使用Union All 两个要联合的SQL语句 字段个数必须一样，而且字段类型要“相容”（一致）； 如果我们需要将两个select语句的结果作为一个整体显示出来，我们就需要用到union或者union all关键字。union(或称为联合)的作用是将多个结果合并在一起显示出来。 union和union all的区别是,union会自动压缩多个结果集合中的重复结果，而union all则将所有的结果全部显示出来，不管是不是重复。 假设我们有一个表Student，包括以下字段与数据： mysql123456789101112131415161718192021drop table student; create table student ( id int primary key, name nvarchar2(50) not null, score number not null ); insert into student values(1,'Aaron',78); insert into student values(2,'Bill',76); insert into student values(3,'Cindy',89); insert into student values(4,'Damon',90); insert into student values(5,'Ella',73); insert into student values(6,'Frado',61); insert into student values(7,'Gill',99); insert into student values(8,'Hellen',56); insert into student values(9,'Ivan',93); insert into student values(10,'Jay',90); commit; 首先，我们来看一下UNION的例子： mysql123456789101112131415161718SQL&gt; select * 2 from student 3 where id&amp;lt;4 4 union 5 select * 6 from student 7 where id&amp;gt;2 and id&amp;lt;6 8 ; ID NAME SCORE ---------- ------------------------------ ---------- 1 Aaron 78 2 Bill 76 3 Cindy 89 4 Damon 90 5 Ella 73 SQL&gt; 如果换成Union All连接两个结果集，则结果如下： mysql12345678910111213141516171819SQL&gt; select * 2 from student 3 where id&amp;lt;4 4 union all 5 select * 6 from student 7 where id&amp;gt;2 and id&amp;lt;6 8 ; ID NAME SCORE ---------- ------------------------------ ---------- 1 Aaron 78 2 Bill 76 3 Cindy 89 3 Cindy 89 4 Damon 90 5 Ella 73 6 rows selected. 可以看到，Union和Union All的区别之一在于对重复结果的处理。 接下来，我们交换一个两个SELECT语句的顺序，看看结果是怎样的。 mysql123456789101112131415161718192021222324252627282930313233343536SQL&gt; select * 2 from student 3 where id&gt;2 and id&lt;6 4 union 5 select * 6 from student 7 where id&gt;4 8 ; ID NAME SCORE ---------- ------------------------------ ---------- 1 Aaron 78 2 Bill 76 3 Cindy 89 4 Damon 90 5 Ella 73 SQL&gt; select * 2 from student 3 where id&gt;2 and id&lt;6 4 union all 5 select * 6 from student 7 where id&gt;4 8 ; ID NAME SCORE ---------- ------------------------------ ---------- 3 Cindy 89 4 Damon 90 5 Ella 73 1 Aaron 78 2 Bill 76 3 Cindy 89 6 rows selected. 可以看到，对于UNION来说，交换两个SELECT语句的顺序后结果仍然是一样的，这是因为UNION会自动排序。而UNION ALL在交换了SELECT语句的顺序后结果则不相同，因为UNION ALL不会对结果自动进行排序。 那么这个自动排序的规则是什么呢？我们交换一下SELECT后面选择字段的顺序（前面使用SELECT * 相当于SELECT ID,NAME,SCORE），看看结果如何： mysql12345678910111213141516SQL&gt; select score,id,name 2 from student 3 where id&lt;4 4 union 5 select score,id,name 6 from student 7 where id&gt;2 and id&lt;6 8 ; SCORE ID NAME ---------- ---------- ------------------------------ 73 5 Ella 76 2 Bill 78 1 Aaron 89 3 Cindy 90 4 Damon 可以看到，此时是按照字段SCORE来对结果进行排序的（前面SELECT * 的时候是按照ID进行排序的）。 那么有人会问，如果我想自行控制排序，能不能使用ORDER BY呢？当然可以。不过在写法上有需要注意的地方： mysql12345678910111213141516select score,id,name from student where id &gt; 2 and id &lt; 7 union select score,id,name from student where id &lt; 4 union select score,id,name from student where id &gt; 8 order by id desc order by子句必须写在最后一个结果集里，并且其排序规则将改变操作后的排序结果。对于Union、Union All、Intersect、Minus都有效。 其他的集合操作符，如Intersect和Minus的操作和Union基本一致，这里一起总结一下： Union，对两个结果集进行并集操作，不包括重复行，同时进行默认规则的排序； Union All，对两个结果集进行并集操作，包括重复行，不进行排序； Intersect，对两个结果集进行交集操作，不包括重复行，同时进行默认规则的排序； Minus，对两个结果集进行差操作，不包括重复行，同时进行默认规则的排序。 可以在最后一个结果集中指定Order by子句改变排序方式。]]></content>
+    <content type="text"><![CDATA[Union因为要进行重复值扫描，所以效率低。如果合并没有刻意要删除重复行，那么就使用Union All两个要联合的SQL语句 字段个数必须一样，而且字段类型要“相容”（一致）；如果我们需要将两个select语句的结果作为一个整体显示出来，我们就需要用到union或者union all关键字。union(或称为联合)的作用是将多个结果合并在一起显示出来。union和union all的区别是,union会自动压缩多个结果集合中的重复结果，而union all则将所有的结果全部显示出来，不管是不是重复。 假设我们有一个表Student，包括以下字段与数据： mysql123456789101112131415161718192021drop table student; create table student ( id int primary key, name nvarchar2(50) not null, score number not null ); insert into student values(1,'Aaron',78); insert into student values(2,'Bill',76); insert into student values(3,'Cindy',89); insert into student values(4,'Damon',90); insert into student values(5,'Ella',73); insert into student values(6,'Frado',61); insert into student values(7,'Gill',99); insert into student values(8,'Hellen',56); insert into student values(9,'Ivan',93); insert into student values(10,'Jay',90); commit; 首先，我们来看一下UNION的例子： mysql123456789101112131415161718SQL&gt; select * 2 from student 3 where id&amp;lt;4 4 union 5 select * 6 from student 7 where id&amp;gt;2 and id&amp;lt;6 8 ; ID NAME SCORE ---------- ------------------------------ ---------- 1 Aaron 78 2 Bill 76 3 Cindy 89 4 Damon 90 5 Ella 73 SQL&gt; 如果换成Union All连接两个结果集，则结果如下： mysql12345678910111213141516171819SQL&gt; select * 2 from student 3 where id&amp;lt;4 4 union all 5 select * 6 from student 7 where id&amp;gt;2 and id&amp;lt;6 8 ; ID NAME SCORE ---------- ------------------------------ ---------- 1 Aaron 78 2 Bill 76 3 Cindy 89 3 Cindy 89 4 Damon 90 5 Ella 73 6 rows selected. 可以看到，Union和Union All的区别之一在于对重复结果的处理。 接下来，我们交换一个两个SELECT语句的顺序，看看结果是怎样的。 mysql123456789101112131415161718192021222324252627282930313233343536SQL&gt; select * 2 from student 3 where id&gt;2 and id&lt;6 4 union 5 select * 6 from student 7 where id&gt;4 8 ; ID NAME SCORE ---------- ------------------------------ ---------- 1 Aaron 78 2 Bill 76 3 Cindy 89 4 Damon 90 5 Ella 73 SQL&gt; select * 2 from student 3 where id&gt;2 and id&lt;6 4 union all 5 select * 6 from student 7 where id&gt;4 8 ; ID NAME SCORE ---------- ------------------------------ ---------- 3 Cindy 89 4 Damon 90 5 Ella 73 1 Aaron 78 2 Bill 76 3 Cindy 89 6 rows selected. 可以看到，对于UNION来说，交换两个SELECT语句的顺序后结果仍然是一样的，这是因为UNION会自动排序。而UNION ALL在交换了SELECT语句的顺序后结果则不相同，因为UNION ALL不会对结果自动进行排序。 那么这个自动排序的规则是什么呢？我们交换一下SELECT后面选择字段的顺序（前面使用SELECT * 相当于SELECT ID,NAME,SCORE），看看结果如何： mysql12345678910111213141516SQL&gt; select score,id,name 2 from student 3 where id&lt;4 4 union 5 select score,id,name 6 from student 7 where id&gt;2 and id&lt;6 8 ; SCORE ID NAME ---------- ---------- ------------------------------ 73 5 Ella 76 2 Bill 78 1 Aaron 89 3 Cindy 90 4 Damon 可以看到，此时是按照字段SCORE来对结果进行排序的（前面SELECT * 的时候是按照ID进行排序的）。 那么有人会问，如果我想自行控制排序，能不能使用ORDER BY呢？当然可以。不过在写法上有需要注意的地方： mysql12345678910111213141516select score,id,name from student where id &gt; 2 and id &lt; 7 union select score,id,name from student where id &lt; 4 union select score,id,name from student where id &gt; 8 order by id desc order by子句必须写在最后一个结果集里，并且其排序规则将改变操作后的排序结果。对于Union、Union All、Intersect、Minus都有效。 其他的集合操作符，如Intersect和Minus的操作和Union基本一致，这里一起总结一下： Union，对两个结果集进行并集操作，不包括重复行，同时进行默认规则的排序； Union All，对两个结果集进行并集操作，包括重复行，不进行排序； Intersect，对两个结果集进行交集操作，不包括重复行，同时进行默认规则的排序； Minus，对两个结果集进行差操作，不包括重复行，同时进行默认规则的排序。 可以在最后一个结果集中指定Order by子句改变排序方式。]]></content>
       <categories>
         <category>DataBase</category>
       </categories>
@@ -50,8 +50,8 @@
         <category>CentOS</category>
       </categories>
       <tags>
-        <tag>Centos</tag>
         <tag>Linux</tag>
+        <tag>Centos</tag>
       </tags>
   </entry>
   <entry>
@@ -63,8 +63,8 @@
         <category>Oracle</category>
       </categories>
       <tags>
-        <tag>oracle</tag>
         <tag>centos</tag>
+        <tag>oracle</tag>
       </tags>
   </entry>
   <entry>
@@ -95,11 +95,11 @@
     <content type="text"><![CDATA[Oracle数据导入导出imp/exp就相当于oracle数据还原与备份。exp命令可以把数据从远程数据库服务器导出到本地的dmp文件，imp命令可以把dmp文件从本地导入到远处的数据库服务器中。 利用这个功能可以构建两个相同的数据库，一个用来测试，一个用来正式使用。 执行环境：可以在SQLPLUS.EXE或者DOS（命令行）中执行， DOS中可以执行是因为在%ORACLE_HOME%/BIN目录下有EXP.EXE与IMP.EXE文件被用来执行导入导出。 oracle用java编写，SQLPLUS.EXE、EXP.EXE、IMP.EXE这几个文件有可能是被包装后的类文件。 SQLPLUS.EXE调用EXP.EXE、IMP.EXE所包裹的类，完成导入导出功能。 下面介绍的是导入导出的不同场景的实例。 数据导出1、将数据库TEST完全导出,用户名system 密码manager 导出到D:\daochu.dmp中 1exp system/manager@TEST file=d:\test.dmp full=y 2、将数据库中system用户与sys用户的表导出 1exp system/manager@TEST file=d:\test.dmp owner=(system,sys) 3、将数据库中的inner_notify、notify_staff_relat表导出 1exp testuser/123456@TESTDB2 file= d:\data\TESTDB2.dmp tables=(inner_notify,notify_staff_relat) 4、将数据库中的表table1中的字段filed1以”00”打头的数据导出 1exp system/manager@TEST file=d:\test.dmp tables=(table1) query=\&quot;where filed1 like &apos;00%&apos;\&quot; 上面是常用的导出，如果相对导出的dmp文件进行压缩，可以在上面命令后面加上 compress=y 来实现。 例如： 1exp system/manager@TEST file=d:\test.dmp full=y compress=y 数据导入1、将D:\test.dmp 中的数据导入ORCL数据库中。 1imp system/manager@ORCL file=d:\test.dmp 上面的语句可能会出现问题，如果有一些表已经存在，它就会报错，对该表就不进行导入，解决：在后面加上 ignore=y 或者 table_exists_action=replace （具体使用哪个请根据oracle数据库版本而定，在oracle 10以后引入了数据泵技术impdp，可以在导入时使用table_exists_action=replace参数）就可以了。 123imp system/manager@ORCL full=y file= d:\test.dmp ignore=yimpdp system/manager@ORCL directory=Dir dumpfile= d:\test.dmp full=y table_exists_action=replace 2、将d:\test.dmp中的表table1导入 1imp system/manager@ORCL file=d:\test.dmp tables=(table1) 基本上上面的导入导出够用了。不少情况要先是将表彻底删除，然后导入。 操作时注意以下几点： 1、操作者要有足够的权限，权限不够它会提示。 给用户授权 1234567--用sys用户登录sqlplus sys/123456 as sysdba--授予testuser用户dba权限，dba权限过高，请谨慎操作grant dba to testuser 2、数据库是可以连上的。可以用tnsping TEST 来获得数据库TEST能否连上。 exp/imp和expdp/impdp的区别Oracle10g提出的数据泵技术，在以下几个方面优于exp/imp命令： 1、数据泵工具运行于服务器端，相比客户端的exp/imp其性能更好，并能实现exp/imp的全部功能。 2、通过使用exclude,include,content等参数，数据泵可以为数据及数据对象提供更细微级别的选择性。 3、通过设定数据库版本号，数据泵可以兼容老版本的数据库系统。 4、并行执行。 5、通过estimate_only参数，数据泵可以预估导出作业所需的磁盘空间。 6、支持分布式环境中通过数据库连接实现导入\导出。 7、支持导入时重新映射功能（即将对象导入到新的目标数据文件、架构及表空间等）。 8、支持元数据压缩及数据采样。 实际对比： 1、把用户usera的对象导入到userb emp/imp用法：formuser=usera touser=userb empdp/impdp用法：remap_schema=’usera’:’userb’ 例如： 123imp system/password fromuser=usera touser=userb file=back.dmp log=backlog.log;impdp system/password directory=expdp dumpfile=back.dmp remap_schema=&apos;usera&apos;:&apos;userb&apos; logfile=backlog.log 2、更改表空间 用exp/imp，想要更改表空间，需要手动处理， 而impdp只要用：remap_tablespace=’tablespace_old’ : ‘tablespace_new’ 3、当制定多个表的时候 exp/imp用法：tables(‘table1’,’table2’,’table3’) expdp/impdp用法：tables=’table1’,’table2’,’table3’ 4、是否要导出数据行 exp：rows=y,导出数据行，rows=n不导出数据行 expdp：content(all:对象+数据行，data_only：只导出对象，metadata_only：只导出数据的记录） 常见问题问题描述 ORA-39001: 参数值无效 ORA-39000: 转储文件说明错误 ORA-39143: 转储文件 “.dmp” 可能是原始的导出转储文件 原因及解决 .dmp文件是使用exp命令导出的，而使用impdp 无法识别exp命令导出的文件，需要使用imp命令进行导入]]></content>
       <categories>
         <category>Oracle</category>
-        <category>数据库</category>
+        <category>DataBase</category>
       </categories>
       <tags>
         <tag>SQL</tag>
-        <tag>oracle</tag>
+        <tag>Oracle</tag>
       </tags>
   </entry>
   <entry>
@@ -243,8 +243,8 @@
         <category>Share</category>
       </categories>
       <tags>
-        <tag>Nginx</tag>
         <tag>Linux</tag>
+        <tag>Nginx</tag>
       </tags>
   </entry>
   <entry>
