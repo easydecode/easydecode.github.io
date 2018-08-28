@@ -3,6 +3,23 @@
 
 
     
+  <url>
+    <loc>https://easydecode.coding.me/2018/06/01/4aabff58.html</loc>
+    <lastmod>2018-08-28T03:59:18.627Z</lastmod>
+    <data>
+        <display>
+        <title>Centos7安装并配置nginx</title>
+        <pubTime>2018-06-01T12:30:59.000Z</pubTime>
+        
+        <tag>Nginx</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://easydecode.coding.me/2017/06/02/9b504b05.html</loc>
@@ -32,9 +49,9 @@
         <title>H5AI的完整安装记录</title>
         <pubTime>2017-04-24T12:28:21.000Z</pubTime>
         
-        <tag>Linux</tag>
-         
         <tag>Nginx</tag>
+         
+        <tag>Linux</tag>
          
          
            
@@ -86,23 +103,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>https://easydecode.coding.me/2018/06/01/4aabff58.html</loc>
-    <lastmod>2018-08-27T03:29:17.300Z</lastmod>
-    <data>
-        <display>
-        <title>Centos7安装并配置nginx</title>
-        <pubTime>2018-06-01T12:30:59.000Z</pubTime>
-        
-        <tag>nginx</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>https://easydecode.coding.me/2018/03/11/f7940b2b.html</loc>
@@ -340,8 +340,28 @@
         <title>Linux（CentOS）上安装openoffice+swftools</title>
         <pubTime>2017-08-27T12:56:05.000Z</pubTime>
         
+        <tag>linux</tag>
+         
         <tag>centos</tag>
          
+         
+           
+             
+              <breadCrumb title="CentOS" url="https://easydecode.coding.me/categories/CentOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://easydecode.coding.me/2017/07/26/cbf4ff77.html</loc>
+    <lastmod>2018-08-25T00:12:37.941Z</lastmod>
+    <data>
+        <display>
+        <title>CentOS配置静态ip</title>
+        <pubTime>2017-07-26T09:49:47.000Z</pubTime>
+        
         <tag>linux</tag>
          
          
@@ -377,26 +397,6 @@
 
     
   <url>
-    <loc>https://easydecode.coding.me/2017/07/26/cbf4ff77.html</loc>
-    <lastmod>2018-08-25T00:12:37.941Z</lastmod>
-    <data>
-        <display>
-        <title>CentOS配置静态ip</title>
-        <pubTime>2017-07-26T09:49:47.000Z</pubTime>
-        
-        <tag>linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="CentOS" url="https://easydecode.coding.me/categories/CentOS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://easydecode.coding.me/2017/04/17/daf362db.html</loc>
     <lastmod>2018-08-25T00:12:37.940Z</lastmod>
     <data>
@@ -407,26 +407,6 @@
         <tag>java</tag>
          
         <tag>springMVC</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="https://easydecode.coding.me/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://easydecode.coding.me/2017/05/12/6512d67b.html</loc>
-    <lastmod>2018-08-25T00:12:37.939Z</lastmod>
-    <data>
-        <display>
-        <title>Hibernate映射问题</title>
-        <pubTime>2017-05-12T06:51:26.000Z</pubTime>
-        
-        <tag>java</tag>
          
          
            
@@ -452,6 +432,26 @@
            
              
               <breadCrumb title="杂谈" url="https://easydecode.coding.me/categories/%E6%9D%82%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://easydecode.coding.me/2017/05/12/6512d67b.html</loc>
+    <lastmod>2018-08-25T00:12:37.939Z</lastmod>
+    <data>
+        <display>
+        <title>Hibernate映射问题</title>
+        <pubTime>2017-05-12T06:51:26.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="https://easydecode.coding.me/categories/Java/"/>
           
         </display>
     </data>
