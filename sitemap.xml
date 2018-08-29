@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://easydecode.coding.me/photos/data.json</loc>
+    
+    <lastmod>2018-08-29T06:42:18.766Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://easydecode.coding.me/favorite/index.html</loc>
     
     <lastmod>2018-08-29T00:51:04.276Z</lastmod>
@@ -117,13 +124,6 @@
     <loc>https://easydecode.coding.me/2017/04/06/98b3c51b.html</loc>
     
     <lastmod>2018-08-28T05:41:58.662Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://easydecode.coding.me/photos/data.json</loc>
-    
-    <lastmod>2018-08-28T02:05:57.826Z</lastmod>
     
   </url>
   
