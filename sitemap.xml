@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://easydecode.coding.me/2017/08/07/fc662c52.html</loc>
+    
+    <lastmod>2018-09-12T07:23:45.042Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://easydecode.coding.me/share/index.html</loc>
+    
+    <lastmod>2018-09-12T06:30:12.301Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://easydecode.coding.me/2018/08/29/4e9c1bdb.html</loc>
     
     <lastmod>2018-09-12T02:29:40.680Z</lastmod>
@@ -23,7 +37,7 @@
   </url>
   
   <url>
-    <loc>https://easydecode.coding.me/photos/data.json</loc>
+    <loc>https://easydecode.coding.me/share/data.json</loc>
     
     <lastmod>2018-08-31T09:35:57.142Z</lastmod>
     
@@ -184,13 +198,6 @@
   </url>
   
   <url>
-    <loc>https://easydecode.coding.me/2017/08/07/fc662c52.html</loc>
-    
-    <lastmod>2018-08-28T06:09:39.002Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://easydecode.coding.me/2017/04/13/98556eab.html</loc>
     
     <lastmod>2018-08-28T05:48:31.305Z</lastmod>
@@ -208,13 +215,6 @@
     <loc>https://easydecode.coding.me/2017/04/24/91b29f60.html</loc>
     
     <lastmod>2018-08-27T07:26:37.696Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://easydecode.coding.me/photos/index.html</loc>
-    
-    <lastmod>2018-08-27T04:01:51.275Z</lastmod>
     
   </url>
   
