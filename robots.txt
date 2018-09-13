@@ -12,7 +12,7 @@ Disallow: /fonts/
 Disallow: /images/
 Disallow: /downloads/
 Disallow: /favorite/
-Disallow: /photos/
+Disallow: /share/
 Disallow: /vendors/
 Disallow: /fancybox/
 
