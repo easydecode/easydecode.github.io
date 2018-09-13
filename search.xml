@@ -121,7 +121,7 @@
         <category>Oracle</category>
       </categories>
       <tags>
-        <tag>SQL,Oracle</tag>
+        <tag>DataBase,Oracle</tag>
       </tags>
   </entry>
   <entry>
@@ -173,10 +173,11 @@
     <url>%2F2017%2F05%2F17%2F95d600c2.html</url>
     <content type="text"><![CDATA[错误信息： 无法连接到 windows。 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: 命名管道提供程序, error: 40 - 无法打开到 SQL Server 的连接) (Microsoft SQL Server，错误: 53) 今天打开SQL Server 2008 的 SQL Server Management Studio，输入sa的密码发现，无法登陆数据库，提示信息如上： 解决方案： 1、先查看计算机名（Win7系统） 2、 然后在SQL Server Management Studio登录界面选择这个服务器 3、 如果在列表里没有的话就点击 浏览更多 ，就可以找到了 选择好正确的服务器就可以正常登录了 如果还是不行，修改一下计算机名重启后再按照上面的步骤进行]]></content>
       <categories>
+        <category>DataBase</category>
         <category>MSSQL</category>
       </categories>
       <tags>
-        <tag>SQL</tag>
+        <tag>DataBase</tag>
       </tags>
   </entry>
   <entry>
@@ -260,7 +261,7 @@
   <entry>
     <title><![CDATA[H5AI的完整安装记录]]></title>
     <url>%2F2017%2F04%2F24%2F91b29f60.html</url>
-    <content type="text"><![CDATA[h5ai 是HTTP Web服务器的现代文件索引器，专注于您的文件。目录以有吸引力的方式显示，浏览它们通过不同的视图，面包屑和树状概述增强。最初，h5ai是HTML5 Apache Index的缩写，但现在也支持其他Web服务器。 在爬文的时候无意间看到h5ai，在使用h5ai之前尝试过apache目录索引和Apaxy，但是真的没有h5ai漂亮，h5ai给了我们更多的可定制性，但也是配置最复杂的一个，现在我把我配置h5ai的时候遇到的坑跟大家分享一下。 1、下载h5ai下载地址：https://larsjung.de/h5ai/ 2、解压并上传将h5ai最新版本0.29.0解压后的 _h5ai 文件夹上传到网站根目录 3、修改站点默认主页把/_h5ai/public/index.php添加到nignx配置文件，只是添加，当然把原先的删除再添加也是可以的 重载nginx，访问http://域名/_h5ai/public/index.php 注意：尽量使用谷歌浏览器，因为一些浏览器不兼容，无法出现下图的界面 4、安装拓展插件和简单配置默认密码为空，点击login，来到h5ai显示支持界面。 默认如下： 下面主要将上图显示no的选项变为yes，以便h5ai可以实现一些更丰富的功能。 Public Cache directory和Private Cache directory 把h5ai程序_h5ai中private和public两个文件夹中的cache目录权限设置为777，刷新一下网页可以看到两个no变为yes了。 Use EXIF thumbs 安装php的exif模块即可，主要参考http://www.vpser.net/manage/lnmp-php-install-ext.html，把需要的exif模块编译进去，然后重启lnmp即可。 Movie thumbs 选择安装ffmpeg，安装方法参考官网，其中centos的安装ffmpeg方法记得好像很麻烦。最后找到两个打包好的源码包，直接就可以用。 CentOS 64位：http://down.lc/Linux/Tool/ffmpeg-3.1-64bit-static.tar.xz CentOS 32位：http://down.lc/Linux/Tool/ffmpeg-3.1-32bit-static.tar.xz tar xvJf 解压到系统某个地方，然后在/usr/bin/目录创建软链接ffmpeg，指向解压包里面的ffmpeg就可以了，完成后执行ffmpeg，显示版本等信息即可。 也可以选择安装avconv，到http://libav.org/download/下载源码编译安装即可。 PDF thumbs 选择安装convert，直接yum -y install ImageMagick即可。 Shell tar，Shell zip和Shell du 这三项，根据h5ai官网，在php.ini被禁用函数中去掉exec和passthru即可，是否有危险不知道，自己掂量，禁用好像也不影响一些功能，另外顺便把scandir函数去掉禁用，不然会出现无非显示目录中文件的情况。 上面的步骤完成，基本上所有选项都是yes了。 h5ai比较强大，可以实现在线预览音乐，视频，图片等等功能（并不能在线预览所有格式，例如一些avi，flv文件）。 文章参考：http://www.aeaee.com/content/2995.html，感谢作者 中文文件名乱码解决修改系统编码为uft-8即可解决 修改方法： centos6： 1vim /etc/sysconfig/i18n 修改后的内容如下： 12345LANG=&quot;zh_CN.UTF-8&quot;SUPPORTED=&quot;zh_CN.UTF-8:zh_CN:zh&quot;SYSFONT=&quot;latarcyrheb-sun16&quot; centos7： 1vi /etc/locale.conf 修改后的内容如下： 1LANG=&quot;en_US.UTF-8&quot; 或者 1LANG=&quot;zh_CN.UTF-8&quot; 或者使用如下命令修改系统编码 1export LC_ALL=en_US.UTF-8]]></content>
+    <content type="text"><![CDATA[h5ai 是HTTP Web服务器的现代文件索引器，专注于您的文件。目录以有吸引力的方式显示，浏览它们通过不同的视图，面包屑和树状概述增强。最初，h5ai是HTML5 Apache Index的缩写，但现在也支持其他Web服务器。在爬文的时候无意间看到h5ai，在使用h5ai之前尝试过apache目录索引和Apaxy，但是真的没有h5ai漂亮，h5ai给了我们更多的可定制性，但也是配置最复杂的一个，现在我把我配置h5ai的时候遇到的坑跟大家分享一下。 1、下载h5ai下载地址：https://larsjung.de/h5ai/ 2、解压并上传将h5ai最新版本0.29.0解压后的 _h5ai 文件夹上传到网站根目录 3、修改站点默认主页把/_h5ai/public/index.php添加到nignx配置文件，只是添加，当然把原先的删除再添加也是可以的 重载nginx，访问http://域名/\_h5ai/public/index.php 注意：尽量使用谷歌浏览器，因为一些浏览器不兼容，无法出现下图的界面 4、安装拓展插件和简单配置默认密码为空，点击login，来到h5ai显示支持界面。 默认如下： 下面主要将上图显示no的选项变为yes，以便h5ai可以实现一些更丰富的功能。 Public Cache directory和Private Cache directory 把h5ai程序_h5ai中private和public两个文件夹中的cache目录权限设置为777，刷新一下网页可以看到两个no变为yes了。 Use EXIF thumbs 安装php的exif模块即可，主要参考http://www.vpser.net/manage/lnmp-php-install-ext.html，把需要的exif模块编译进去，然后重启lnmp即可。 Movie thumbs 选择安装ffmpeg，安装方法参考官网，其中centos的安装ffmpeg方法记得好像很麻烦。最后找到两个打包好的源码包，直接就可以用。 CentOS 64位：http://down.lc/Linux/Tool/ffmpeg-3.1-64bit-static.tar.xz CentOS 32位：http://down.lc/Linux/Tool/ffmpeg-3.1-32bit-static.tar.xz tar xvJf 解压到系统某个地方，然后在/usr/bin/目录创建软链接ffmpeg，指向解压包里面的ffmpeg就可以了，完成后执行ffmpeg，显示版本等信息即可。 也可以选择安装avconv，到http://libav.org/download/下载源码编译安装即可。 PDF thumbs 选择安装convert，直接yum -y install ImageMagick即可。 Shell tar，Shell zip和Shell du 这三项，根据h5ai官网，在php.ini被禁用函数中去掉exec和passthru即可，是否有危险不知道，自己掂量，禁用好像也不影响一些功能，另外顺便把scandir函数去掉禁用，不然会出现无非显示目录中文件的情况。 上面的步骤完成，基本上所有选项都是yes了。 h5ai比较强大，可以实现在线预览音乐，视频，图片等等功能（并不能在线预览所有格式，例如一些avi，flv文件）。 文章参考：http://www.aeaee.com/content/2995.html，感谢作者 中文文件名乱码解决修改系统编码为uft-8即可解决 修改方法： centos6： 1vim /etc/sysconfig/i18n 修改后的内容如下： 12345LANG=&quot;zh_CN.UTF-8&quot;SUPPORTED=&quot;zh_CN.UTF-8:zh_CN:zh&quot;SYSFONT=&quot;latarcyrheb-sun16&quot; centos7： 1vi /etc/locale.conf 修改后的内容如下： 1LANG=&quot;en_US.UTF-8&quot; 或者 1LANG=&quot;zh_CN.UTF-8&quot; 或者使用如下命令修改系统编码 1export LC_ALL=en_US.UTF-8]]></content>
       <categories>
         <category>Share</category>
       </categories>
@@ -337,7 +338,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[openVZ安装双倍发包net-Speeder]]></title>
+    <title><![CDATA[OpenVZ安装双倍发包Net-Speeder]]></title>
     <url>%2F2017%2F04%2F06%2F98b3c51b.html</url>
     <content type="text"><![CDATA[VPS上可以安装锐速对VPS进行加速，但是这货对 Linux 内核有要求，一般就只能在XEN或者KVM的机子上安装。不过还好锐速有一个免费的代替品：net-speeder。net-speeder可以在高延迟不稳定链路上优化单线程下载速度 安装CentOS用户，可以直接使用net-speeder一键安装包，执行以下命令安装： 123wget --no-check-certificate https://gist.github.com/LazyZhu/dc3f2f84c336a08fd6a5/raw/d8aa4bcf955409e28a262ccf52921a65fe49da99/net_speeder_lazyinstall.shsh net_speeder_lazyinstall.sh Debian/Ubuntu用户，可以直接使用TENNFY WU博主写的net-speeder一键安装包 12345wget --no-check-certificate https://raw.githubusercontent.com/tennfy/debian_netspeeder_tennfy/master/debian_netspeeder_tennfy.shchmod a+x debian_netspeeder_tennfy.shbash debian_netspeeder_tennfy.sh 开启加速安装完成后，会给出脚本用法，最简单的就是开启所有IP协议加速。参数：./net_speeder 网卡名 加速规则（bpf规则）。 1nohup /usr/local/net_speeder/net_speeder venet0 "ip" &gt;/dev/null 2&gt;&amp;&amp; 注意：这里引号中的IP不需要动，有的地方说需要改成自己的IP地址，其实不用改！ 关闭net_speeder1killall net_speeder 查看 net-speeder 是否运行1ps aux|grep net_speeder|grep -v grep 注意事项以下几种情况不适合使用net-speeder: 小流量 VPS，因为使用 net-speeder 会消耗双倍流量。 主要提供网页、图片等小文件访问。net-speeder 对于下载大文件、代理访问视频网站等效果比较好，而对小文件加速效果不明显。 需要使用 pptpd 等不支持双倍发包的网络软件。net-speeder 会造成这些软件无法正常使用。 如果线路本身很好，不存在延迟较大情况，使用 net-speeder 效果会适得其反。]]></content>
       <categories>
