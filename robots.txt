@@ -1,6 +1,4 @@
 User-agent: *
-Allow: /
-
 Disallow: /archives/
 Disallow: /tags/
 Disallow: /categories/
@@ -10,7 +8,8 @@ Disallow: /css/
 Disallow: /lib/
 Disallow: /fonts/
 Disallow: /images/
-Disallow: /downloads/
+Disallow: /2017/
+Disallow: /2018/
 Disallow: /favorite/
 Disallow: /static/
 Disallow: /vendors/
