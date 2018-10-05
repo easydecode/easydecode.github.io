@@ -361,7 +361,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-05T11:24:49+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-05T11:34:38+08:00">
                 2018-10-05
               </time>
             
@@ -432,7 +432,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  459
+                  516
                 </span>
               
 
@@ -448,7 +448,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -470,32 +470,20 @@
 
       
         
-          
-            <p>宿主机环境：Centos 7</p>
+          <p>宿主机环境：Centos 7</p>
 <p>搭建目标：</p>
 <blockquote>
-<p>centos7.2 + Tomcat7 + JDK1.8</p>
-</blockquote>
-<h3 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h3><p>1、移除旧的docker版本<br>···shell<br>sudo yum remove docker \<br>                  docker-client \<br>                  docker-client-latest \<br>                  docker-common \<br>                  docker-latest \<br>                  docker-latest-logrotate \<br>                  docker-logrotate \<br>                  docker-selinux \<br>                  docker-engine-selinux \<br>                  docker-engine<br>···<br>2、安装所需依赖<br>···<br>sudo yum install -y yum-utils device-mapper-persistent-data lvm2<br>···<br>3、添加软件源<br>···<br>sudo yum-config-manager –add-repo <a href="http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo" target="_blank" rel="noopener">http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</a><br>···<br>4、更新 yum 缓存：<br>···<br>sudo yum makecache fast<br>···<br>5、安装 Docker-ce：<br>···<br>sudo yum -y install docker-ce<br>···<br>6、启动 Docker 后台服务<br>···<br>sudo systemctl start docker<br>···<br>7、设置Docker自启动<br>···<br>sudo systemctl enable docker<br>···</p>
-<h3 id="安装Java开发环境"><a href="#安装Java开发环境" class="headerlink" title="安装Java开发环境"></a>安装Java开发环境</h3><p>1、获取centos7.2 docker镜像<br>···</p>
-<h1 id="通过docker-search-软件名-命令获取centos"><a href="#通过docker-search-软件名-命令获取centos" class="headerlink" title="通过docker search 软件名 命令获取centos"></a>通过docker search 软件名 命令获取centos</h1><p>docker search centos</p>
-<h1 id="获取centos镜像"><a href="#获取centos镜像" class="headerlink" title="获取centos镜像"></a>获取centos镜像</h1><p>docker pull centos:7.2</p>
-<p>docker images<br>···</p>
-<p>2、启动容器<br>启动容器命令 docker run options containsID argument<br>options参数说明：<br>-i：表示以“交互模式”运行容器<br>-t：表示容器启动后会进入其命令行<br>-v：表示需要将本地哪个目录挂载到容器中，格式：-v &lt;宿主机目录&gt;:&lt;容器目录&gt;<br>–name: 指定容器的名称，如果未指定容器名称则会随机生成一个名称<br>···</p>
-<h1 id="创建docker文件夹"><a href="#创建docker文件夹" class="headerlink" title="创建docker文件夹"></a>创建docker文件夹</h1><p>mkdir -p /usr/local/docker</p>
-<p>docker run –name JavaWeb -itv /usr/local/docker/:/usr/local/docker/ ff426288ea90 /bin/bash</p>
-<h1 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h1><p>docker start JavaWeb</p>
-<h1 id="登录容器"><a href="#登录容器" class="headerlink" title="登录容器"></a>登录容器</h1><p>docker attach JavaWeb<br>···<br>3、安装JDK1.8<br>···</p>
-<h1 id="安装wget库"><a href="#安装wget库" class="headerlink" title="安装wget库"></a>安装wget库</h1><p>sudo yum install wget</p>
-<h1 id="进入usr-local-src目录下"><a href="#进入usr-local-src目录下" class="headerlink" title="进入usr/local/src目录下"></a>进入usr/local/src目录下</h1><p>cd /usr/local/src</p>
-<h1 id="获取JDK1-8包"><a href="#获取JDK1-8包" class="headerlink" title="获取JDK1.8包"></a>获取JDK1.8包</h1><p>wget –no-check-certificate –no-cookies –header “Cookie: oraclelicense=accept-securebackup-cookie” <a href="http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz" target="_blank" rel="noopener">http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz</a></p>
-<h1 id="解压jdk-8u161-linux-x64-tar-gz"><a href="#解压jdk-8u161-linux-x64-tar-gz" class="headerlink" title="解压jdk-8u161-linux-x64.tar.gz"></a>解压jdk-8u161-linux-x64.tar.gz</h1><p>tar -zxvf jdk-8u161-linux-x64.tar.gz</p>
-<h1 id="重命名为JDK8"><a href="#重命名为JDK8" class="headerlink" title="重命名为JDK8"></a>重命名为JDK8</h1><p>mv jdk1.8.0_161 jdk8</p>
-<h1 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h1><p>sudo vim /etc/profile</p>
-<p>#增加下面内容到该文件最后<br>export JAVA_HOME=/usr/local/jdk8<br>export PATH=$JAVA_HOME/bin:$PATH<br>export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</p>
-<h1 id="使环境生效"><a href="#使环境生效" class="headerlink" title="使环境生效"></a>使环境生效</h1><p>source /etc/profile<br>···</p>
+<p>centos7.2 + Tomcat7 + JDK1.8<br>
 
           
+
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/05/6d114ae4.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2669,7 +2657,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">41.4k</span>
+    <span title="Site words total count">41.5k</span>
   
 </div>
 
