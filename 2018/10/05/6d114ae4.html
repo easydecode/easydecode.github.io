@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="DataBase," />
+  <meta name="keywords" content="Java,Docker," />
 
 
 
@@ -85,18 +85,18 @@
 
 
 
-<meta name="description" content="Union因为要进行重复值扫描，所以效率低。如果合并没有刻意要删除重复行，那么就使用Union All两个要联合的SQL语句 字段个数必须一样，而且字段类型要“相容”（一致）；如果我们需要将两个select语句的结果作为一个整体显示出来，我们就需要用到union或者union all关键字。union(或称为联合)的作用是将多个结果合并在一起显示出来。union和union all的区别是,uni">
-<meta name="keywords" content="DataBase">
+<meta name="description" content="宿主机环境：Centos 7 搭建目标：  centos7.2 + Tomcat7 + JDK1.8  安装docker1、移除旧的docker版本···shellsudo yum remove docker \                  docker-client \                  docker-client-latest \                  doc">
+<meta name="keywords" content="Java,Docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Union和Union All的区别">
-<meta property="og:url" content="https://easydecode.coding.me/2018/01/22/6bd305d7.html">
+<meta property="og:title" content="Docker搭建Java开发环境">
+<meta property="og:url" content="https://easydecode.coding.me/2018/10/05/6d114ae4.html">
 <meta property="og:site_name" content="轻松解码">
-<meta property="og:description" content="Union因为要进行重复值扫描，所以效率低。如果合并没有刻意要删除重复行，那么就使用Union All两个要联合的SQL语句 字段个数必须一样，而且字段类型要“相容”（一致）；如果我们需要将两个select语句的结果作为一个整体显示出来，我们就需要用到union或者union all关键字。union(或称为联合)的作用是将多个结果合并在一起显示出来。union和union all的区别是,uni">
+<meta property="og:description" content="宿主机环境：Centos 7 搭建目标：  centos7.2 + Tomcat7 + JDK1.8  安装docker1、移除旧的docker版本···shellsudo yum remove docker \                  docker-client \                  docker-client-latest \                  doc">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-28T08:36:08.712Z">
+<meta property="og:updated_time" content="2018-10-05T03:24:49.800Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Union和Union All的区别">
-<meta name="twitter:description" content="Union因为要进行重复值扫描，所以效率低。如果合并没有刻意要删除重复行，那么就使用Union All两个要联合的SQL语句 字段个数必须一样，而且字段类型要“相容”（一致）；如果我们需要将两个select语句的结果作为一个整体显示出来，我们就需要用到union或者union all关键字。union(或称为联合)的作用是将多个结果合并在一起显示出来。union和union all的区别是,uni">
+<meta name="twitter:title" content="Docker搭建Java开发环境">
+<meta name="twitter:description" content="宿主机环境：Centos 7 搭建目标：  centos7.2 + Tomcat7 + JDK1.8  安装docker1、移除旧的docker版本···shellsudo yum remove docker \                  docker-client \                  docker-client-latest \                  doc">
 
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://easydecode.coding.me/2018/01/22/6bd305d7.html"/>
+  <link rel="canonical" href="https://easydecode.coding.me/2018/10/05/6d114ae4.html"/>
 
 
 
 
 
-  <title>Union和Union All的区别 | 轻松解码</title>
+  <title>Docker搭建Java开发环境 | 轻松解码</title>
   
 
 
@@ -313,7 +313,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://easydecode.coding.me/2018/01/22/6bd305d7.html">
+    <link itemprop="mainEntityOfPage" href="https://easydecode.coding.me/2018/10/05/6d114ae4.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="easydecode">
@@ -330,7 +330,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Union和Union All的区别</h2>
+          <h2 class="post-title" itemprop="name headline">Docker搭建Java开发环境</h2>
         
 
         <div class="post-meta">
@@ -342,8 +342,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-22T17:27:30+08:00">
-                2018-01-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-05T10:52:10+08:00">
+                2018-10-05
               </time>
             
 
@@ -358,8 +358,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-28T16:36:08+08:00">
-                2018-08-28
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-05T11:24:49+08:00">
+                2018-10-05
               </time>
             
           </span>
@@ -377,8 +377,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/DataBase/" itemprop="url" rel="index">
-                    <span itemprop="name">DataBase</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -395,8 +395,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/01/22/6bd305d7.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/01/22/6bd305d7.html" itemprop="commentCount"></span>
+                <a href="/2018/10/05/6d114ae4.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/05/6d114ae4.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -404,7 +404,7 @@
 
           
           
-             <span id="/2018/01/22/6bd305d7.html" class="leancloud_visitors" data-flag-title="Union和Union All的区别">
+             <span id="/2018/10/05/6d114ae4.html" class="leancloud_visitors" data-flag-title="Docker搭建Java开发环境">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -429,7 +429,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,166
+                  459
                 </span>
               
 
@@ -445,7 +445,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  2
                 </span>
               
             </div>
@@ -466,29 +466,29 @@
       
 
       
-        <p>Union因为要进行重复值扫描，所以效率低。如果合并没有刻意要删除重复行，那么就使用Union All<br>两个要联合的SQL语句 字段个数必须一样，而且字段类型要“相容”（一致）；<br>如果我们需要将两个select语句的结果作为一个整体显示出来，我们就需要用到union或者union all关键字。union(或称为联合)的作用是将多个结果合并在一起显示出来。<br>union和union all的区别是,union会自动压缩多个结果集合中的重复结果，而union all则将所有的结果全部显示出来，不管是不是重复。<br><a id="more"></a></p>
-<p>假设我们有一个表Student，包括以下字段与数据：</p>
-<figure class="highlight sql"><figcaption><span>mysql</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> student;  </span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student  </span><br><span class="line">(  </span><br><span class="line"><span class="keyword">id</span> <span class="built_in">int</span> primary <span class="keyword">key</span>,  </span><br><span class="line"><span class="keyword">name</span> <span class="keyword">nvarchar2</span>(<span class="number">50</span>) <span class="keyword">not</span> <span class="literal">null</span>,  </span><br><span class="line">score <span class="built_in">number</span> <span class="keyword">not</span> <span class="literal">null</span>  </span><br><span class="line">);  </span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">1</span>,<span class="string">'Aaron'</span>,<span class="number">78</span>);  </span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">2</span>,<span class="string">'Bill'</span>,<span class="number">76</span>);  </span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">3</span>,<span class="string">'Cindy'</span>,<span class="number">89</span>);  </span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">4</span>,<span class="string">'Damon'</span>,<span class="number">90</span>);  </span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">5</span>,<span class="string">'Ella'</span>,<span class="number">73</span>);  </span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">6</span>,<span class="string">'Frado'</span>,<span class="number">61</span>);  </span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">7</span>,<span class="string">'Gill'</span>,<span class="number">99</span>);  </span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">8</span>,<span class="string">'Hellen'</span>,<span class="number">56</span>);  </span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">9</span>,<span class="string">'Ivan'</span>,<span class="number">93</span>);  </span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="number">10</span>,<span class="string">'Jay'</span>,<span class="number">90</span>);  </span><br><span class="line"></span><br><span class="line"><span class="keyword">commit</span>;</span><br></pre></td></tr></table></figure>
-<p>首先，我们来看一下UNION的例子：</p>
-<figure class="highlight"><figcaption><span>mysql</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; select *  </span><br><span class="line">  2  from student  </span><br><span class="line">  3  where id&amp;lt;4  </span><br><span class="line">  4  union  </span><br><span class="line">  5  <span class="keyword">select</span> *  </span><br><span class="line">  <span class="number">6</span>  <span class="keyword">from</span> student  </span><br><span class="line">  <span class="number">7</span>  <span class="keyword">where</span> <span class="keyword">id</span>&amp;gt;2 and id&amp;lt;6  </span><br><span class="line">  8  ;  </span><br><span class="line"></span><br><span class="line">        ID NAME                                SCORE  </span><br><span class="line"><span class="comment">---------- ------------------------------ ----------  </span></span><br><span class="line">         1 Aaron                                  78  </span><br><span class="line">         2 Bill                                   76  </span><br><span class="line">         3 Cindy                                  89  </span><br><span class="line">         4 Damon                                  90  </span><br><span class="line">         5 Ella                                   73  </span><br><span class="line"></span><br><span class="line">SQL&gt;</span><br></pre></td></tr></table></figure>
-<p>如果换成Union All连接两个结果集，则结果如下：</p>
-<figure class="highlight sql"><figcaption><span>mysql</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; select *  </span><br><span class="line">  2  from student  </span><br><span class="line">  3  where id&amp;lt;4  </span><br><span class="line">  4  union all  </span><br><span class="line">  5  <span class="keyword">select</span> *  </span><br><span class="line">  <span class="number">6</span>  <span class="keyword">from</span> student  </span><br><span class="line">  <span class="number">7</span>  <span class="keyword">where</span> <span class="keyword">id</span>&amp;gt;2 and id&amp;lt;6  </span><br><span class="line">  8  ;  </span><br><span class="line"></span><br><span class="line">        ID NAME                                SCORE  </span><br><span class="line"><span class="comment">---------- ------------------------------ ----------  </span></span><br><span class="line">         1 Aaron                                  78  </span><br><span class="line">         2 Bill                                   76  </span><br><span class="line">         3 Cindy                                  89  </span><br><span class="line">         3 Cindy                                  89  </span><br><span class="line">         4 Damon                                  90  </span><br><span class="line">         5 Ella                                   73  </span><br><span class="line"></span><br><span class="line">6 rows selected.</span><br></pre></td></tr></table></figure>
-<p>可以看到，<span style="color: #ff6600;">Union和Union All的区别之一在于对重复结果的处理。</span></p>
-<p>接下来，我们交换一个两个SELECT语句的顺序，看看结果是怎样的。</p>
-<figure class="highlight sql"><figcaption><span>mysql</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; select *  </span><br><span class="line">  2  from student  </span><br><span class="line">  3  where id&gt;2 and id&lt;6  </span><br><span class="line">  4  union  </span><br><span class="line">  5  <span class="keyword">select</span> *  </span><br><span class="line">  <span class="number">6</span>  <span class="keyword">from</span> student  </span><br><span class="line">  <span class="number">7</span>  <span class="keyword">where</span> <span class="keyword">id</span>&gt;<span class="number">4</span>  </span><br><span class="line">  <span class="number">8</span>  ;  </span><br><span class="line"></span><br><span class="line">        ID NAME                                SCORE  </span><br><span class="line"><span class="comment">---------- ------------------------------ ----------  </span></span><br><span class="line">         1 Aaron                                  78  </span><br><span class="line">         2 Bill                                   76  </span><br><span class="line">         3 Cindy                                  89  </span><br><span class="line">         4 Damon                                  90  </span><br><span class="line">         5 Ella                                   73  </span><br><span class="line"></span><br><span class="line">SQL&gt; select *  </span><br><span class="line">  2  from student  </span><br><span class="line">  3  where id&gt;2 and id&lt;6  </span><br><span class="line">  4  union all  </span><br><span class="line">  5  <span class="keyword">select</span> *  </span><br><span class="line">  <span class="number">6</span>  <span class="keyword">from</span> student  </span><br><span class="line">  <span class="number">7</span>  <span class="keyword">where</span> <span class="keyword">id</span>&gt;<span class="number">4</span>  </span><br><span class="line">  <span class="number">8</span>  ;  </span><br><span class="line"></span><br><span class="line">        ID NAME                                SCORE  </span><br><span class="line"><span class="comment">---------- ------------------------------ ----------  </span></span><br><span class="line">         3 Cindy                                  89  </span><br><span class="line">         4 Damon                                  90  </span><br><span class="line">         5 Ella                                   73  </span><br><span class="line">         1 Aaron                                  78  </span><br><span class="line">         2 Bill                                   76  </span><br><span class="line">         3 Cindy                                  89  </span><br><span class="line"></span><br><span class="line">6 rows selected.</span><br></pre></td></tr></table></figure>
-<p>可以看到，对于UNION来说，交换两个SELECT语句的顺序后结果仍然是一样的，这是因为<span style="color: #ff6600;">UNION会自动排序</span>。而UNION ALL在交换了SELECT语句的顺序后结果则不相同，因为UNION ALL不会对结果自动进行排序。</p>
-<p>那么这个自动排序的规则是什么呢？我们交换一下SELECT后面选择字段的顺序（前面使用SELECT * 相当于SELECT ID,NAME,SCORE），看看结果如何：</p>
-<figure class="highlight sql"><figcaption><span>mysql</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; select score,id,name  </span><br><span class="line">  2  from student  </span><br><span class="line">  3  where id&lt;4  </span><br><span class="line">  4  union  </span><br><span class="line">  5  <span class="keyword">select</span> score,<span class="keyword">id</span>,<span class="keyword">name</span>  </span><br><span class="line">  <span class="number">6</span>  <span class="keyword">from</span> student  </span><br><span class="line">  <span class="number">7</span>  <span class="keyword">where</span> <span class="keyword">id</span>&gt;<span class="number">2</span> <span class="keyword">and</span> <span class="keyword">id</span>&lt;<span class="number">6</span>  </span><br><span class="line">  <span class="number">8</span>  ;  </span><br><span class="line"></span><br><span class="line">     SCORE         ID NAME  </span><br><span class="line"><span class="comment">---------- ---------- ------------------------------  </span></span><br><span class="line">        73          5 Ella  </span><br><span class="line">        76          2 Bill  </span><br><span class="line">        78          1 Aaron  </span><br><span class="line">        89          3 Cindy  </span><br><span class="line">        90          4 Damon</span><br></pre></td></tr></table></figure>
-<p>可以看到，此时是按照字段SCORE来对结果进行排序的（前面SELECT * 的时候是按照ID进行排序的）。</p>
-<p>那么有人会问，如果我想自行控制排序，能不能使用ORDER BY呢？当然可以。不过在写法上有需要注意的地方：</p>
-<figure class="highlight sql"><figcaption><span>mysql</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> score,<span class="keyword">id</span>,<span class="keyword">name</span>  </span><br><span class="line"><span class="keyword">from</span> student  </span><br><span class="line"><span class="keyword">where</span> <span class="keyword">id</span> &gt; <span class="number">2</span> <span class="keyword">and</span> <span class="keyword">id</span> &lt; <span class="number">7</span>  </span><br><span class="line"></span><br><span class="line"><span class="keyword">union</span>  </span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> score,<span class="keyword">id</span>,<span class="keyword">name</span>  </span><br><span class="line"><span class="keyword">from</span> student  </span><br><span class="line"><span class="keyword">where</span> <span class="keyword">id</span> &lt; <span class="number">4</span>  </span><br><span class="line"></span><br><span class="line"><span class="keyword">union</span>  </span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> score,<span class="keyword">id</span>,<span class="keyword">name</span>  </span><br><span class="line"><span class="keyword">from</span> student  </span><br><span class="line"><span class="keyword">where</span> <span class="keyword">id</span> &gt; <span class="number">8</span>  </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">id</span> <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
-<p>order by子句必须写在最后一个结果集里，并且其排序规则将改变操作后的排序结果。对于Union、Union All、Intersect、Minus都有效。</p>
-<p>其他的集合操作符，如Intersect和Minus的操作和Union基本一致，这里一起总结一下：</p>
-<p>Union，对两个结果集进行并集操作，不包括重复行，同时进行默认规则的排序；</p>
-<p>Union All，对两个结果集进行并集操作，包括重复行，不进行排序；</p>
-<p>Intersect，对两个结果集进行交集操作，不包括重复行，同时进行默认规则的排序；</p>
-<p>Minus，对两个结果集进行差操作，不包括重复行，同时进行默认规则的排序。</p>
-<p>可以在最后一个结果集中指定Order by子句改变排序方式。</p>
+        <p>宿主机环境：Centos 7</p>
+<p>搭建目标：</p>
+<blockquote>
+<p>centos7.2 + Tomcat7 + JDK1.8</p>
+</blockquote>
+<h3 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h3><p>1、移除旧的docker版本<br>···shell<br>sudo yum remove docker \<br>                  docker-client \<br>                  docker-client-latest \<br>                  docker-common \<br>                  docker-latest \<br>                  docker-latest-logrotate \<br>                  docker-logrotate \<br>                  docker-selinux \<br>                  docker-engine-selinux \<br>                  docker-engine<br>···<br>2、安装所需依赖<br>···<br>sudo yum install -y yum-utils device-mapper-persistent-data lvm2<br>···<br>3、添加软件源<br>···<br>sudo yum-config-manager –add-repo <a href="http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo" target="_blank" rel="noopener">http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</a><br>···<br>4、更新 yum 缓存：<br>···<br>sudo yum makecache fast<br>···<br>5、安装 Docker-ce：<br>···<br>sudo yum -y install docker-ce<br>···<br>6、启动 Docker 后台服务<br>···<br>sudo systemctl start docker<br>···<br>7、设置Docker自启动<br>···<br>sudo systemctl enable docker<br>···</p>
+<h3 id="安装Java开发环境"><a href="#安装Java开发环境" class="headerlink" title="安装Java开发环境"></a>安装Java开发环境</h3><p>1、获取centos7.2 docker镜像<br>···</p>
+<h1 id="通过docker-search-软件名-命令获取centos"><a href="#通过docker-search-软件名-命令获取centos" class="headerlink" title="通过docker search 软件名 命令获取centos"></a>通过docker search 软件名 命令获取centos</h1><p>docker search centos</p>
+<h1 id="获取centos镜像"><a href="#获取centos镜像" class="headerlink" title="获取centos镜像"></a>获取centos镜像</h1><p>docker pull centos:7.2</p>
+<p>docker images<br>···</p>
+<p>2、启动容器<br>启动容器命令 docker run options containsID argument<br>options参数说明：<br>-i：表示以“交互模式”运行容器<br>-t：表示容器启动后会进入其命令行<br>-v：表示需要将本地哪个目录挂载到容器中，格式：-v &lt;宿主机目录&gt;:&lt;容器目录&gt;<br>–name: 指定容器的名称，如果未指定容器名称则会随机生成一个名称<br>···</p>
+<h1 id="创建docker文件夹"><a href="#创建docker文件夹" class="headerlink" title="创建docker文件夹"></a>创建docker文件夹</h1><p>mkdir -p /usr/local/docker</p>
+<p>docker run –name JavaWeb -itv /usr/local/docker/:/usr/local/docker/ ff426288ea90 /bin/bash</p>
+<h1 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h1><p>docker start JavaWeb</p>
+<h1 id="登录容器"><a href="#登录容器" class="headerlink" title="登录容器"></a>登录容器</h1><p>docker attach JavaWeb<br>···<br>3、安装JDK1.8<br>···</p>
+<h1 id="安装wget库"><a href="#安装wget库" class="headerlink" title="安装wget库"></a>安装wget库</h1><p>sudo yum install wget</p>
+<h1 id="进入usr-local-src目录下"><a href="#进入usr-local-src目录下" class="headerlink" title="进入usr/local/src目录下"></a>进入usr/local/src目录下</h1><p>cd /usr/local/src</p>
+<h1 id="获取JDK1-8包"><a href="#获取JDK1-8包" class="headerlink" title="获取JDK1.8包"></a>获取JDK1.8包</h1><p>wget –no-check-certificate –no-cookies –header “Cookie: oraclelicense=accept-securebackup-cookie” <a href="http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz" target="_blank" rel="noopener">http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz</a></p>
+<h1 id="解压jdk-8u161-linux-x64-tar-gz"><a href="#解压jdk-8u161-linux-x64-tar-gz" class="headerlink" title="解压jdk-8u161-linux-x64.tar.gz"></a>解压jdk-8u161-linux-x64.tar.gz</h1><p>tar -zxvf jdk-8u161-linux-x64.tar.gz</p>
+<h1 id="重命名为JDK8"><a href="#重命名为JDK8" class="headerlink" title="重命名为JDK8"></a>重命名为JDK8</h1><p>mv jdk1.8.0_161 jdk8</p>
+<h1 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h1><p>sudo vim /etc/profile</p>
+<p>#增加下面内容到该文件最后<br>export JAVA_HOME=/usr/local/jdk8<br>export PATH=$JAVA_HOME/bin:$PATH<br>export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</p>
+<h1 id="使环境生效"><a href="#使环境生效" class="headerlink" title="使环境生效"></a>使环境生效</h1><p>source /etc/profile<br>···</p>
 
       
     </div>
@@ -530,7 +530,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/DataBase/" rel="tag"><i class="fa fa-tag"></i> DataBase</a>
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
           
         </div>
       
@@ -543,8 +545,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/13/8d4c56cb.html" rel="next" title="Java 8 Streams API：对Stream分组和分区">
-                <i class="fa fa-chevron-left"></i> Java 8 Streams API：对Stream分组和分区
+              <a href="/2018/09/12/a827c8e0.html" rel="next" title="SpringBoot打jar包瘦身">
+                <i class="fa fa-chevron-left"></i> SpringBoot打jar包瘦身
               </a>
             
           </div>
@@ -552,10 +554,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/11/f7940b2b.html" rel="prev" title="Spring中ContextLoaderListener和DispatcherServlet所加载的context的关系">
-                Spring中ContextLoaderListener和DispatcherServlet所加载的context的关系 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -612,8 +610,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -750,6 +757,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装docker"><span class="nav-number">1.</span> <span class="nav-text">安装docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Java开发环境"><span class="nav-number">2.</span> <span class="nav-text">安装Java开发环境</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过docker-search-软件名-命令获取centos"><span class="nav-number"></span> <span class="nav-text">通过docker search 软件名 命令获取centos</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取centos镜像"><span class="nav-number"></span> <span class="nav-text">获取centos镜像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建docker文件夹"><span class="nav-number"></span> <span class="nav-text">创建docker文件夹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#启动容器"><span class="nav-number"></span> <span class="nav-text">启动容器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#登录容器"><span class="nav-number"></span> <span class="nav-text">登录容器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装wget库"><span class="nav-number"></span> <span class="nav-text">安装wget库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进入usr-local-src目录下"><span class="nav-number"></span> <span class="nav-text">进入usr/local/src目录下</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取JDK1-8包"><span class="nav-number"></span> <span class="nav-text">获取JDK1.8包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解压jdk-8u161-linux-x64-tar-gz"><span class="nav-number"></span> <span class="nav-text">解压jdk-8u161-linux-x64.tar.gz</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重命名为JDK8"><span class="nav-number"></span> <span class="nav-text">重命名为JDK8</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置环境变量"><span class="nav-number"></span> <span class="nav-text">配置环境变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使环境生效"><span class="nav-number"></span> <span class="nav-text">使环境生效</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
