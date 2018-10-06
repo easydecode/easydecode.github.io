@@ -85,18 +85,18 @@
 
 
 
-<meta name="description" content="下载源码下载带boost库的源码12cd /usr/local/srcwget https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-boost-5.7.20.tar.gz 安装相关依赖12yum -y install gcc gcc-devel gcc-c++ gcc-c++-devel autoconf* automake* zlib* libxml">
+<meta name="description" content="MySQL 是一个真正的多线程、多用户的SQL数据库服务，凭借其高性能、高可靠和易于使用的性能，成为服务器领域中最受欢迎的开源数据库系统。为了确保数据库的功能的完整性、可定制性，本篇文章将采用源代码编译的方式安装mysql数据库系统">
 <meta name="keywords" content="CentOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS 7编译安装MySQL 5.7.20">
 <meta property="og:url" content="https://easydecode.coding.me/2018/06/05/9abf9c9c.html">
 <meta property="og:site_name" content="轻松解码">
-<meta property="og:description" content="下载源码下载带boost库的源码12cd /usr/local/srcwget https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-boost-5.7.20.tar.gz 安装相关依赖12yum -y install gcc gcc-devel gcc-c++ gcc-c++-devel autoconf* automake* zlib* libxml">
+<meta property="og:description" content="MySQL 是一个真正的多线程、多用户的SQL数据库服务，凭借其高性能、高可靠和易于使用的性能，成为服务器领域中最受欢迎的开源数据库系统。为了确保数据库的功能的完整性、可定制性，本篇文章将采用源代码编译的方式安装mysql数据库系统">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-06T02:06:22.911Z">
+<meta property="og:updated_time" content="2018-10-06T02:37:45.348Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 7编译安装MySQL 5.7.20">
-<meta name="twitter:description" content="下载源码下载带boost库的源码12cd /usr/local/srcwget https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-boost-5.7.20.tar.gz 安装相关依赖12yum -y install gcc gcc-devel gcc-c++ gcc-c++-devel autoconf* automake* zlib* libxml">
+<meta name="twitter:description" content="MySQL 是一个真正的多线程、多用户的SQL数据库服务，凭借其高性能、高可靠和易于使用的性能，成为服务器领域中最受欢迎的开源数据库系统。为了确保数据库的功能的完整性、可定制性，本篇文章将采用源代码编译的方式安装mysql数据库系统">
 
 
 
@@ -358,7 +358,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-06T10:06:22+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-06T10:37:45+08:00">
                 2018-10-06
               </time>
             
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  438
+                  529
                 </span>
               
 
@@ -423,7 +423,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -444,7 +444,11 @@
       
 
       
-        <h3 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h3><p>下载带boost库的源码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src</span><br><span class="line">wget https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-boost-5.7.20.tar.gz</span><br></pre></td></tr></table></figure></p>
+        <blockquote>
+<p>MySQL 是一个真正的多线程、多用户的SQL数据库服务，凭借其高性能、高可靠和易于使用的性能，成为服务器领域中最受欢迎的开源数据库系统。<br>为了确保数据库的功能的完整性、可定制性，本篇文章将采用源代码编译的方式安装mysql数据库系统</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="下载源码"><a href="#下载源码" class="headerlink" title="下载源码"></a>下载源码</h3><p>下载带boost库的源码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src</span><br><span class="line">wget https://dev.mysql.com/downloads/file/?id=479097</span><br></pre></td></tr></table></figure></p>
 <h3 id="安装相关依赖"><a href="#安装相关依赖" class="headerlink" title="安装相关依赖"></a>安装相关依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y install gcc gcc-devel gcc-c++ gcc-c++-devel autoconf* automake* zlib* libxml*ncurses-devel ncurses libgcrypt* libtool* cmake openssl openssl-devel bisonbison-devel perl-Data-Dumper boost</span><br><span class="line"> boost-doc boost-devel</span><br></pre></td></tr></table></figure>
 <h3 id="创建用户及目录"><a href="#创建用户及目录" class="headerlink" title="创建用户及目录"></a>创建用户及目录</h3><p>创建mysql用户和data目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">groupadd mysql</span><br><span class="line"></span><br><span class="line">useradd -g mysql -s /sbin/nologin mysql</span><br><span class="line"></span><br><span class="line">mkdir -pv /usr/local/mysql/conf</span><br><span class="line"></span><br><span class="line">mkdir -pv /usr/local/mysql/data</span><br><span class="line"></span><br><span class="line">chown -R mysql:mysql /usr/local/mysql</span><br></pre></td></tr></table></figure></p>
 <p>CentOS7重新启动后/var/run/mysqld目录丢失。mysql5.7版本的小bug，启动时不能自行建立mysqld目录。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -pv /var/run/mysqld</span><br><span class="line"></span><br><span class="line">chown mysql:mysql /var/run/mysqld</span><br></pre></td></tr></table></figure></p>
@@ -770,7 +774,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">42.4k</span>
+    <span title="Site words total count">42.5k</span>
   
 </div>
 
