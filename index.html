@@ -553,7 +553,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/12/a827c8e0.html" itemprop="url">SpringBoot打jar包瘦身</a></h2>
+                <a class="post-title-link" href="/2018/09/12/a827c8e0.html" itemprop="url">SpringBoot打Jar包瘦身</a></h2>
         
 
         <div class="post-meta">
@@ -581,8 +581,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-12T10:29:07+08:00">
-                2018-09-12
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-11T10:38:45+08:00">
+                2018-10-11
               </time>
             
           </span>
@@ -627,7 +627,7 @@
 
           
           
-             <span id="/2018/09/12/a827c8e0.html" class="leancloud_visitors" data-flag-title="SpringBoot打jar包瘦身">
+             <span id="/2018/09/12/a827c8e0.html" class="leancloud_visitors" data-flag-title="SpringBoot打Jar包瘦身">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1371,7 +1371,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/11/f7940b2b.html" itemprop="url">Spring中ContextLoaderListener和DispatcherServlet所加载的context的关系</a></h2>
+                <a class="post-title-link" href="/2018/03/11/f7940b2b.html" itemprop="url">Spring中两个Context的关系</a></h2>
         
 
         <div class="post-meta">
@@ -1399,8 +1399,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-31T16:54:59+08:00">
-                2018-08-31
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-11T10:38:18+08:00">
+                2018-10-11
               </time>
             
           </span>
@@ -1445,7 +1445,7 @@
 
           
           
-             <span id="/2018/03/11/f7940b2b.html" class="leancloud_visitors" data-flag-title="Spring中ContextLoaderListener和DispatcherServlet所加载的context的关系">
+             <span id="/2018/03/11/f7940b2b.html" class="leancloud_visitors" data-flag-title="Spring中两个Context的关系">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1470,7 +1470,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  704
+                  702
                 </span>
               
 
@@ -1508,14 +1508,11 @@
 
       
         
-          <h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><ul>
-<li><p>ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文</p>
-</li>
-<li><p>ContextLoaderListener所加载的context被spring通过<br><code>servletContext.setAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE, this.context)</code>存放到ServletContext的attribute中。<br>该上下文可通过WebApplicationContextUtils.getRequiredWebApplicationContext(servletContext)或WebApplicationContextUtils.getWebApplicationContext(servletContext)方法来获取。</p>
-</li>
-<li><p>DispatcherServlet加载context完成后，如果publishContext属性的值设置为true的话(缺省为true) 会将context存放在ServletContext的key为org.springframework.web.servlet.FrameworkServlet.CONTEXT. + (servletName)的attribute中。</p>
-</li>
-</ul>
+          <blockquote>
+<p>ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文</p>
+<p>ContextLoaderListener所加载的context被spring通过<br><code>servletContext.setAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE, this.context)</code>存放到ServletContext的attribute中。<br>该上下文可通过WebApplicationContextUtils.getRequiredWebApplicationContext(servletContext)或WebApplicationContextUtils.getWebApplicationContext(servletContext)方法来获取。</p>
+<p>DispatcherServlet加载context完成后，如果publishContext属性的值设置为true的话(缺省为true) 会将context存放在ServletContext的key为org.springframework.web.servlet.FrameworkServlet.CONTEXT. + (servletName)的attribute中。</p>
+</blockquote>
 
           
 

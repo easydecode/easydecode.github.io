@@ -85,18 +85,18 @@
 
 
 
-<meta name="description" content="区别 ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文  ContextLoaderListener所加载的context被spring通过servletContext.setAttribute(WebApplicationCon">
+<meta name="description" content="ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文 ContextLoaderListener所加载的context被spring通过servletContext.setAttribute(WebApplicationContex">
 <meta name="keywords" content="Java,Spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring中ContextLoaderListener和DispatcherServlet所加载的context的关系">
+<meta property="og:title" content="Spring中两个Context的关系">
 <meta property="og:url" content="https://easydecode.coding.me/2018/03/11/f7940b2b.html">
 <meta property="og:site_name" content="轻松解码">
-<meta property="og:description" content="区别 ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文  ContextLoaderListener所加载的context被spring通过servletContext.setAttribute(WebApplicationCon">
+<meta property="og:description" content="ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文 ContextLoaderListener所加载的context被spring通过servletContext.setAttribute(WebApplicationContex">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-31T08:54:59.148Z">
+<meta property="og:updated_time" content="2018-10-11T02:38:18.393Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring中ContextLoaderListener和DispatcherServlet所加载的context的关系">
-<meta name="twitter:description" content="区别 ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文  ContextLoaderListener所加载的context被spring通过servletContext.setAttribute(WebApplicationCon">
+<meta name="twitter:title" content="Spring中两个Context的关系">
+<meta name="twitter:description" content="ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文 ContextLoaderListener所加载的context被spring通过servletContext.setAttribute(WebApplicationContex">
 
 
 
@@ -132,7 +132,7 @@
 
 
 
-  <title>Spring中ContextLoaderListener和DispatcherServlet所加载的context的关系 | 轻松解码</title>
+  <title>Spring中两个Context的关系 | 轻松解码</title>
   
 
 
@@ -330,7 +330,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Spring中ContextLoaderListener和DispatcherServlet所加载的context的关系</h2>
+          <h2 class="post-title" itemprop="name headline">Spring中两个Context的关系</h2>
         
 
         <div class="post-meta">
@@ -358,8 +358,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-31T16:54:59+08:00">
-                2018-08-31
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-11T10:38:18+08:00">
+                2018-10-11
               </time>
             
           </span>
@@ -404,7 +404,7 @@
 
           
           
-             <span id="/2018/03/11/f7940b2b.html" class="leancloud_visitors" data-flag-title="Spring中ContextLoaderListener和DispatcherServlet所加载的context的关系">
+             <span id="/2018/03/11/f7940b2b.html" class="leancloud_visitors" data-flag-title="Spring中两个Context的关系">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -429,7 +429,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  704
+                  702
                 </span>
               
 
@@ -466,14 +466,11 @@
       
 
       
-        <h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><ul>
-<li><p>ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文</p>
-</li>
-<li><p>ContextLoaderListener所加载的context被spring通过<br><code>servletContext.setAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE, this.context)</code>存放到ServletContext的attribute中。<br>该上下文可通过WebApplicationContextUtils.getRequiredWebApplicationContext(servletContext)或WebApplicationContextUtils.getWebApplicationContext(servletContext)方法来获取。</p>
-</li>
-<li><p>DispatcherServlet加载context完成后，如果publishContext属性的值设置为true的话(缺省为true) 会将context存放在ServletContext的key为org.springframework.web.servlet.FrameworkServlet.CONTEXT. + (servletName)的attribute中。</p>
-</li>
-</ul>
+        <blockquote>
+<p>ContextLoaderListener加载的applicationContext是web应用全局的上下文，而DispatcherServlet加载的applicationContext是spring MVC的上下文</p>
+<p>ContextLoaderListener所加载的context被spring通过<br><code>servletContext.setAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE, this.context)</code>存放到ServletContext的attribute中。<br>该上下文可通过WebApplicationContextUtils.getRequiredWebApplicationContext(servletContext)或WebApplicationContextUtils.getWebApplicationContext(servletContext)方法来获取。</p>
+<p>DispatcherServlet加载context完成后，如果publishContext属性的值设置为true的话(缺省为true) 会将context存放在ServletContext的key为org.springframework.web.servlet.FrameworkServlet.CONTEXT. + (servletName)的attribute中。</p>
+</blockquote>
 <a id="more"></a>
 <figure class="highlight xml"><figcaption><span>web.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>dispatcher<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath*:dispatcher-servlet.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
@@ -533,7 +530,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java-Spring/" rel="tag"><i class="fa fa-tag"></i> Java,Spring</a>
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/Spring/" rel="tag"><i class="fa fa-tag"></i> Spring</a>
           
         </div>
       
@@ -772,7 +771,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#区别"><span class="nav-number">1.</span> <span class="nav-text">区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关联"><span class="nav-number">2.</span> <span class="nav-text">关联</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意"><span class="nav-number">3.</span> <span class="nav-text">注意</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#关联"><span class="nav-number">1.</span> <span class="nav-text">关联</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意"><span class="nav-number">2.</span> <span class="nav-text">注意</span></a></li></ol></div>
             
 
           </div>
